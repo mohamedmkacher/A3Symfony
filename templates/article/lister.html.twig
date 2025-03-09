@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}    {{ parent() }} | Liste des articles{% endblock title %}
+{% block body %}
+    <h1>Liste des produits informatiques</h1>
+    <table class="table table-striped">
+        <thead class="table-primary">
+        <tr>
+            <th>Identifiant</th>
+            <th>Libellé</th>
+            <th>Quantité</th>
+            <th>Gamme</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        <tr>
+            <td>{{ article.id }}</td>
+            <td>{{ article.libelle}}</td>
+            <td>{{ article.quantite }}</td>
+            <td>{{ article.gamme }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
